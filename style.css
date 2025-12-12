@@ -5,6 +5,7 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
+    touch-action: manipulation; /* Prevent zooming on taps */
 }
 
 .container {
@@ -57,6 +58,12 @@ body {
     font-size: 22px;
     padding: 15px 20px;
     min-width: 60px;
+    min-height: 60px;
+    touch-action: manipulation; /* Prevent double-tap zoom */
+    -webkit-tap-highlight-color: transparent; /* Remove highlight flash */
+    user-select: none; /* Prevent accidental text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .btn:active {
@@ -67,4 +74,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/* Optional: prevent long-press callout menu on mobile */
+.controls {
+    -webkit-touch-callout: none;
 }
